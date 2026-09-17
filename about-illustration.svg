@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" role="img" aria-label="Illustration showing a student profile connected to companies and skills">
+  <defs>
+    <linearGradient id="a1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e6bff"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="380" cy="80" r="76" fill="url(#a1)" opacity=".14"/>
+  <circle cx="86" cy="310" r="58" fill="#1e6bff" opacity=".10"/>
+
+  <!-- connection lines -->
+  <g stroke="#1e6bff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="5 7">
+    <path d="M240 190 L110 96" fill="none"/>
+    <path d="M240 190 L386 110" fill="none"/>
+    <path d="M240 190 L120 296" fill="none"/>
+    <path d="M240 190 L372 292" fill="none"/>
+  </g>
+
+  <!-- centre profile card -->
+  <rect x="170" y="140" width="140" height="102" rx="20" fill="#0b1b33"/>
+  <circle cx="240" cy="176" r="19" fill="url(#a1)"/>
+  <path d="M232 178a8 8 0 1116 0" fill="#fff" opacity=".9"/>
+  <circle cx="240" cy="170" r="6" fill="#fff" opacity=".9"/>
+  <rect x="198" y="206" width="84" height="9" rx="4.5" fill="#ffffff" fill-opacity=".55"/>
+  <rect x="214" y="222" width="52" height="7" rx="3.5" fill="#ffffff" fill-opacity=".3"/>
+
+  <!-- satellite nodes -->
+  <g fill="#ffffff" stroke="#c6cfdf">
+    <rect x="52" y="62" width="116" height="52" rx="16"/>
+    <rect x="336" y="76" width="112" height="52" rx="16"/>
+    <rect x="52" y="266" width="126" height="52" rx="16"/>
+    <rect x="322" y="262" width="118" height="52" rx="16"/>
+  </g>
+  <g fill="url(#a1)">
+    <rect x="66" y="78" width="20" height="20" rx="6"/>
+    <rect x="350" y="92" width="20" height="20" rx="6"/>
+    <rect x="66" y="282" width="20" height="20" rx="6"/>
+    <rect x="336" y="278" width="20" height="20" rx="6"/>
+  </g>
+  <g fill="#0f1c30" opacity=".22">
+    <rect x="96" y="80" width="58" height="8" rx="4"/>
+    <rect x="96" y="94" width="38" height="7" rx="3.5"/>
+    <rect x="380" y="94" width="54" height="8" rx="4"/>
+    <rect x="380" y="108" width="34" height="7" rx="3.5"/>
+    <rect x="96" y="284" width="66" height="8" rx="4"/>
+    <rect x="96" y="298" width="42" height="7" rx="3.5"/>
+    <rect x="366" y="280" width="58" height="8" rx="4"/>
+    <rect x="366" y="294" width="36" height="7" rx="3.5"/>
+  </g>
+</svg>

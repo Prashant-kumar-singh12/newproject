@@ -1,0 +1,138 @@
+/* ============================================================
+   base.css — design tokens, reset, typography, links, focus styles
+   ============================================================ */
+
+/* ============================================================
+   InternLink — main stylesheet
+   Sections: 1) Tokens  2) Base  3) Layout  4) Navbar  5) Hero
+             6) Cards / sections  7) Stats  8) Testimonials
+             9) Forms  10) Footer  11) Utilities  12) Responsive
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Brand colours */
+  --navy-900: #071429;
+  --navy-800: #0b1b33;
+  --navy-700: #12263f;
+  --blue-600: #1554e6;
+  --blue-500: #1e6bff;
+  --cyan-400: #22d3ee;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --gray-50: #f5f7fb;
+  --gray-100: #e9edf5;
+  --gray-300: #c6cfdf;
+  --ink: #0f1c30;
+  --muted: #5a6b85;
+
+  /* Semantic */
+  --ok: #0f9d6a;
+  --err: #d93a4a;
+
+  /* Surfaces */
+  --page-bg: var(--white);
+  --surface: var(--white);
+  --surface-2: var(--gray-50);
+  --border: var(--gray-100);
+  --text: var(--ink);
+  --text-muted: var(--muted);
+
+  /* Shape + depth */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 10px rgba(11, 27, 51, 0.06);
+  --shadow: 0 14px 40px rgba(11, 27, 51, 0.10);
+
+  /* Rhythm */
+  --wrap: 1140px;
+  --gutter: 20px;
+  --section-y: 88px;
+
+  /* Type */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* The page keeps its light brand look inside a dark viewer, but the
+   surrounding chrome is nudged so text never loses contrast. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page-bg: #050d1a;
+    --surface: #0d1a2e;
+    --surface-2: #0a1526;
+    --border: #1b2c47;
+    --text: #eaf1ff;
+    --text-muted: #a9b8d0;
+    --gray-50: #0a1526;
+    --gray-100: #1b2c47;
+  }
+}
+:root[data-theme="dark"] {
+  --page-bg: #050d1a;
+  --surface: #0d1a2e;
+  --surface-2: #0a1526;
+  --border: #1b2c47;
+  --text: #eaf1ff;
+  --text-muted: #a9b8d0;
+  --gray-50: #0a1526;
+  --gray-100: #1b2c47;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 700; }
+h3 { font-size: 1.22rem; font-weight: 600; }
+
+p { margin: 0 0 16px; max-width: 68ch; }
+
+a { color: var(--blue-500); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* Keyboard users must always see where they are. */
+:focus-visible {
+  outline: 3px solid var(--cyan-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+  background: var(--blue-500);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 0 10px 10px;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 0; }

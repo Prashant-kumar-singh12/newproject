@@ -1,0 +1,55 @@
+/* ============================================================
+   responsive.css — breakpoints from 1024px down to 375px
+   ============================================================ */
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  :root { --section-y: 70px; }
+  .hero__grid { gap: 32px; }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .nav__toggle { display: block; }
+  .nav__links {
+    position: absolute;
+    left: 0; right: 0; top: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    background: var(--page-bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 12px var(--gutter) 18px;
+    display: none;
+  }
+  .nav__links.is-open { display: flex; animation: slideUp .25s ease both; }
+  .nav__links a { padding: 12px 14px; }
+  .nav__actions > .btn { display: none; }
+  .nav__links .nav__cta { display: flex; margin-top: 8px; }
+
+  .hero__grid, .split, .contact-grid { grid-template-columns: 1fr; }
+  .hero__art { order: -1; max-width: 420px; margin-inline: auto; }
+  .hero__chip { display: none; }
+  .grid--3, .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  :root { --section-y: 56px; --gutter: 16px; }
+  .grid--3, .grid--2, .grid--4 { grid-template-columns: 1fr; }
+  .hero { padding-block: 56px 64px; }
+  .cta-band { padding: 36px 22px; }
+  .auth-card { padding: 24px 20px; }
+  .user-chip { padding-left: 10px; font-size: .85rem; }
+  .user-chip .btn { padding: 8px 12px; }
+  .stats { padding: 30px 18px; }
+  .footer__grid { grid-template-columns: 1fr; gap: 26px; }
+  .btn { width: 100%; }
+  .btn-row .btn { width: auto; flex: 1 1 160px; }
+}
+
+/* Buttons inside the nav should never stretch full width */
+.nav .btn { width: auto; }
